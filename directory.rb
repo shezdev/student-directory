@@ -21,9 +21,9 @@ def print_header
 end
 
 # Iterate over the students array to print out all the values!
-def print(names)
-  names.each do |name|
-    puts name
+def print(students) # rename argument from names to students
+  students.each do |student|
+    puts "#{student[0]} (#{student[1]} cohort)" #updated this too
   end # end of .each
 end # end of print function
 
