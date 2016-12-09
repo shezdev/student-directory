@@ -1,4 +1,4 @@
-student_count = 11
+# student_count = 11
 # Let's put all of the students into an array
 students = [
   "Dr. Hannibal Lecter",
@@ -16,6 +16,16 @@ students = [
 #and print them
 puts "The students of Villains Academy"
 puts "-------------"
+# Iterate over the students array to print out all the values!
+# On the very first iteration, it will take the first value from the array
+# ("Dr. Hannibal Lecter") and assign it to the variable student.
+# Then, it will execute the block of code (puts student) that will print it
+# to the screen
+students.each do |student|
+  puts student
+end
+
+=begin
 puts students[0]
 puts students[1]
 puts students[2]
@@ -28,7 +38,6 @@ puts students[8]
 puts students[9]
 puts students[10]
 
-=begin
 # First we print the list of students
 puts "The students of Villains Academy"
 puts "-------------"
