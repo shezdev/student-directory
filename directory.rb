@@ -9,7 +9,7 @@ def input_students
   #While the name is not empty, repeat this code:
   while !name.empty? do
     # add the student hash to the array (NOTE << is called the SHOVEL operator - used to add new elements to an array)
-    students << {name: name, cohort: :november} # :november is a ruby symbol
+    students << {name: name, cohort: :november, country_of_birth: :UK, language: :English} # :november is a ruby symbol
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
@@ -22,7 +22,7 @@ end # end of input_students function
 #and print them
 def print_header
   puts "The students of Villains Academy that begin with 'A' and are less than 12 characters, include: "
-  puts "-------------"
+  puts "-----------------------------------------------------------------------------------------------"
 end
 
 def print(students)
@@ -39,7 +39,8 @@ def print(students)
     while count < students.length do
       #puts "#{students[count][:name]} (#{students[count][:cohort]} cohort)"
       # Added count +1 so the numbering starts from 1 instead of 0
-puts "#{count +1}: #{students[count][:name]} (#{students[count][:cohort]} cohort)" if (students[count][:name][0] == "A"  && students[count][:name].length < 12)
+      # Added .center(100) onto the end of "" to center output
+puts "#{count +1}: #{students[count][:name]} (#{students[count][:cohort]} cohort, Birthplace: #{students[count][:country_of_birth]}, Speaks: #{students[count][:language]})".center(100) if (students[count][:name][0] == "A"  && students[count][:name].length < 12)
       count += 1
     end
 
