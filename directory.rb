@@ -25,10 +25,10 @@ def print_header
   puts "-------------"
 end
 
-# Iterate over the students array to print out all the values!
-def print(students) # rename argument from names to students
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)" #updated this to ref the hashes
+def print(students)
+# Using each.with_index(1) to print a number (starting at index 1) before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
+    students.each.with_index(1) do |student, index| # added index here
+      puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" #added index here too
   end # end of .each
 end # end of print function
 
