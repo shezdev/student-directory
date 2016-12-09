@@ -1,16 +1,17 @@
 # Let's put all of the students into an array
+# Updating students from an array to an 'array of arrays'
 students = [
-  "Dr. Hannibal Lecter",
-  "Darth Vader",
-  "Nurse Ratched",
-  "Michael Corleone",
-  "Alex DeLarge",
-  "The Wicked Witch of the West",
-  "Terminator",
-  "Freddy Krueger",
-  "The Joker",
-  "Joffrey Baratheon",
-  "Norman Bates"
+  ["Dr. Hannibal Lecter", :november],
+  ["Darth Vader", :november],
+  ["Nurse Ratched", :november],
+  ["Michael Corleone", :november],
+  ["Alex DeLarge", :november],
+  ["The Wicked Witch of the West", :november],
+  ["Terminator", :november],
+  ["Freddy Krueger", :november],
+  ["The Joker", :november],
+  ["Joffrey Baratheon", :november],
+  ["Norman Bates", :november]
 ]
 
 #and print them
@@ -32,5 +33,5 @@ end # end of print_footer function
 
 #Nothing happens UNTIL we call the methods:
 print_header # call to print_header function
-print(students) # call to print function passing the array called students as an argument.
-print_footer(students) # call to print_footer passing the array called students as an argument.
+print(students) # call to print function which passes the array called students as an argument.
+print_footer(students) # call to print_footer which passes the array called students as an argument.
