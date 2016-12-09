@@ -51,4 +51,6 @@ puts "Norman Bates"
 =end
 
 #Finally, we print the total number of students
-puts "Overall, we have #{student_count} great students"
+# puts "Overall, we have #{student_count} great students"
+# Using the array's .count method on students[]
+puts "Overall, we have #{students.count} great students"
