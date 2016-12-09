@@ -21,7 +21,7 @@ end # end of input_students function
 
 #and print them
 def print_header
-  puts "The students of Villains Academy that begin with 'A' include: "
+  puts "The students of Villains Academy that begin with 'A' and are less than 12 characters, include: "
   puts "-------------"
 end
 
@@ -31,12 +31,22 @@ def print(students)
       # Added condition to print only student names begining with A
       ## student[:name][0] - This allows me to get the first character of the name
       ## Note I have not used an 'else' or 'end' for my if
-      puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if student[:name][0] == "A"
+      # puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if student[:name][0] == "A"
+
+      ## Added condition for length of name < 12 characters
+      puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if (student[:name][0] == "A" && student[:name].length < 12)
+
+# test to print length of name
+      #puts "Name is: #{student[:name]} and length of name is: #{student[:name].length }"
+
+# test to print first letter of name
+      #puts student[:name][0] # This works ok
+      # puts "YES" if student[:name][0] == "A"
+
+
     end # end of .each
 end # end of print function
 
-#puts student[:name][0] # This works ok
-# puts "YES" if student[:name][0] == "A"
 
 
 def print_footer(names)
