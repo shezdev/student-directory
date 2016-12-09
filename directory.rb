@@ -1,4 +1,3 @@
-# student_count = 11
 # Let's put all of the students into an array
 students = [
   "Dr. Hannibal Lecter",
@@ -13,53 +12,25 @@ students = [
   "Joffrey Baratheon",
   "Norman Bates"
 ]
+
 #and print them
-puts "The students of Villains Academy"
-puts "-------------"
-# Iterate over the students array to print out all the values!
-# On the very first iteration, it will take the first value from the array
-# ("Dr. Hannibal Lecter") and assign it to the variable student.
-# Then, it will execute the block of code (puts student) that will print it
-# to the screen
-students.each do |student|
-  puts student
+def print_header
+  puts "The students of Villains Academy"
+  puts "-------------"
 end
 
-=begin
-puts students[0]
-puts students[1]
-puts students[2]
-puts students[3]
-puts students[4]
-puts students[5]
-puts students[6]
-puts students[7]
-puts students[8]
-puts students[9]
-puts students[10]
+# Iterate over the students array to print out all the values!
+def print(names)
+  names.each do |name|
+    puts name
+  end # end of .each
+end # end of print function
 
-# First we print the list of students
-puts "The students of Villains Academy"
-puts "-------------"
-puts "Dr. Hannibal Lecter"
-puts "Darth Vader"
-puts "Nurse Ratched"
-puts "Michael Corleone"
-puts "Alex DeLarge"
-puts "The Wicked Witch of the West"
-puts "Terminator"
-puts "Freddy Krueger"
-puts "The Joker"
-puts "Joffrey Baratheon"
-puts "Norman Bates"
-# Finally, we print the list of students
-#print "Overall, we have "
-# It's important that print() doesn't add new line characters
-#print student_count #11
-#puts " great students"
-=end
+def print_footer(names)
+  puts "Overall, we have #{names.count} great students"
+end # end of print_footer function
 
-#Finally, we print the total number of students
-# puts "Overall, we have #{student_count} great students"
-# Using the array's .count method on students[]
-puts "Overall, we have #{students.count} great students"
+#Nothing happens UNTIL we call the methods:
+print_header # call to print_header function
+print(students) # call to print function passing the array called students as an argument.
+print_footer(students) # call to print_footer passing the array called students as an argument.
