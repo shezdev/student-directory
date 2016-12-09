@@ -1,22 +1,36 @@
  # Replace students array with a function that gets the names of students from user input
 def input_students
-  puts "Please enter the names of the students"
-  puts "To finish, just hit return twice"
-  #Create an empty array to store our future students
+puts "Please enter the names of the students."
+  #puts "To finish just hit return twice."
   students = []
-  #Get the name of 1st student and discard the return character
   name = gets.chomp
-  #While the name is not empty, repeat this code:
+  name = name.to_sym
   while !name.empty? do
-    # add the student hash to the array (NOTE << is called the SHOVEL operator - used to add new elements to an array)
-    students << {name: name, cohort: :november, country_of_birth: :UK, language: :English} # :november is a ruby symbol
-    puts "Now we have #{students.count} students"
-    # get another name from the user
+    puts "Please enter the cohort of the student."
+    cohort = gets.chomp
+    cohorts = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+        #  any? will return true if at least one of the collection members is not false or nil.
+        while !cohorts.any? { |m| cohort.include? m} # i.e. any is false
+            puts "Please type in the cohort month in again? e.g January"
+            cohort = gets.chomp
+        end # end of while on line 37
+    cohort = cohort.to_sym
+
+  # add the student hash to the array (NOTE << is called the SHOVEL operator - used to add new elements to an array)
+  students << {name: name, cohort: cohort, country_of_birth: :UK, language: :English} # :november is a ruby symbol
+    puts "Now we have #{students.count} students!"
+    puts "Please enter next student or hit return to finish."
     name = gets.chomp
-  end # end of while loop
-# return the array of students (that we'll assign to the variable students
-# and then pass to other methods for printing on the screen as a list).
-students
+    name = name.to_sym
+  end
+  if name.empty?
+    name = " "
+  end # end of if
+    puts "Now we have #{students.count} students!"
+    # return the array of students
+    students
+
+
 end # end of input_students function
 
 #and print them
