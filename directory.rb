@@ -1,18 +1,23 @@
-# Let's put all of the students into an array
-# Updating students from an 'array of arrays' to an array of HASHES!
-students = [
-  {name: "Dr. Hannibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Corleone", cohort: :november},
-  {name: "Alex DeLarge", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Krueger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Joffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
-]
+ # Replace students array with a function that gets the names of students from user input
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+  #Create an empty array to store our future students
+  students = []
+  #Get the name of 1st student and discard the return character
+  name = gets.chomp
+  #While the name is not empty, repeat this code:
+  while !name.empty? do
+    # add the student hash to the array (NOTE << is called the SHOVEL operator - used to add new elements to an array)
+    students << {name: name, cohort: :november} # :november is a ruby symbol
+    puts "Now we have #{students.count} students"
+    # get another name from the user
+    name = gets.chomp
+  end # end of while loop
+# return the array of students (that we'll assign to the variable students
+# and then pass to other methods for printing on the screen as a list).
+students
+end # end of input_students function
 
 #and print them
 def print_header
@@ -23,7 +28,7 @@ end
 # Iterate over the students array to print out all the values!
 def print(students) # rename argument from names to students
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)" #updated this to ref the hashes 
+    puts "#{student[:name]} (#{student[:cohort]} cohort)" #updated this to ref the hashes
   end # end of .each
 end # end of print function
 
@@ -32,6 +37,7 @@ def print_footer(names)
 end # end of print_footer function
 
 #Nothing happens UNTIL we call the methods:
+students = input_students # Result of Call to input_students function is assigned to student variable
 print_header # call to print_header function
 print(students) # call to print function which passes the array called students as an argument.
 print_footer(students) # call to print_footer which passes the array called students as an argument.
