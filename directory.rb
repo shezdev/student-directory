@@ -26,27 +26,24 @@ def print_header
 end
 
 def print(students)
-# Using each.with_index(1) to print a number (starting at index 1) before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
+=begin
+    # Using each.with_index(1) to print a number (starting at index 1) before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
     students.each.with_index(1) do |student, index| # added index here
-      # Added condition to print only student names begining with A
-      ## student[:name][0] - This allows me to get the first character of the name
-      ## Note I have not used an 'else' or 'end' for my if
-      # puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if student[:name][0] == "A"
-
       ## Added condition for length of name < 12 characters
       puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if (student[:name][0] == "A" && student[:name].length < 12)
-
-# test to print length of name
-      #puts "Name is: #{student[:name]} and length of name is: #{student[:name].length }"
-
-# test to print first letter of name
-      #puts student[:name][0] # This works ok
-      # puts "YES" if student[:name][0] == "A"
-
-
     end # end of .each
-end # end of print function
+=end
 
+# Rewrite the print method that prints all students using while or until control flow methods
+    count = 0
+    while count < students.length do
+      #puts "#{students[count][:name]} (#{students[count][:cohort]} cohort)"
+      # Added count +1 so the numbering starts from 1 instead of 0
+puts "#{count +1}: #{students[count][:name]} (#{students[count][:cohort]} cohort)" if (students[count][:name][0] == "A"  && students[count][:name].length < 12)
+      count += 1
+    end
+
+end # end of print function
 
 
 def print_footer(names)
