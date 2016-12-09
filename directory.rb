@@ -23,7 +23,7 @@ end
 # Iterate over the students array to print out all the values!
 def print(students) # rename argument from names to students
   students.each do |student|
-    puts "#{student[0]} (#{student[1]} cohort)" #updated this too
+    puts "#{student[:name]} (#{student[:cohort]} cohort)" #updated this to ref the hashes 
   end # end of .each
 end # end of print function
 
