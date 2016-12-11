@@ -57,6 +57,35 @@ def print(students)
     puts "(#{item[:cohort]} cohort) - #{item[:name]} | #{item[:country_of_birth]} | #{item[:language]} "
   end # of .each
 
+
+
+#2. Conditions print the sorted_by_c array i.e. our students ordered by cohort
+#Note how I had to use .to_s on both sides of the condition!!!
+#sorted_by_c.each.with_index(1) do |student, index| # added index here
+
+#puts "It is:#{student[:cohort][0]}!"
+#puts student[:cohort].instance_of? Symbol # checking the type is a symbol - returns true
+
+#puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if (student[:cohort].to_s == "January".to_s)
+
+#puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if (student[:cohort].to_s == "February".to_s)
+
+
+
+ #puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if (student[:cohort].to_s == #"February".to_s)
+
+#jan_cohort = []
+#feb_cohort = []
+#jan_cohort.push(student[:name]) if (student[:cohort].to_s == "January".to_s)
+#feb_cohort.push(student[:name]) if (student[:cohort].to_s == "January".to_s)
+
+
+
+#end #
+#end test
+
+
+
 =begin
     # Using each.with_index(1) to print a number (starting at index 1) before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
     students.each.with_index(1) do |student, index| # added index here
