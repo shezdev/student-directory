@@ -35,18 +35,35 @@ end # end of input_students function
 
 #and print them
 def print_header
-  puts "The students of Villains Academy that begin with 'A' and are less than 12 characters, include: "
-  puts "-----------------------------------------------------------------------------------------------"
+  puts "The students of Villains Academy" # that begin with 'A' and are less than 12 characters, include: "
+  puts "---------------------------------" #--------------------------------------------------------------"
 end
 
 def print(students)
+  # 1. Sort students array by :cohort, and put the result in a new array called sorted
+  sorted_by_c = []
+  sorted_by_c = students.sort_by do |c|
+    c[:cohort]
+  end
+  #puts sorted_by_c
+
+  ##Result is:
+  # {:name=>:Adam, :cohort=>:January, :country_of_birth=>:UK, :language=>:English}
+  # {:name=>:Adi, :cohort=>:January, :country_of_birth=>:UK, :language=>:English}
+  # {:name=>:Aisha, :cohort=>:March, :country_of_birth=>:UK, :language=>:English}
+
+  # 2. Quick Loop to print the sorted_by_c array i.e. our students ordered by cohort
+  sorted_by_c.each do |item|
+    puts "(#{item[:cohort]} cohort) - #{item[:name]} | #{item[:country_of_birth]} | #{item[:language]} "
+  end # of .each
+
 =begin
     # Using each.with_index(1) to print a number (starting at index 1) before the name of each student, e.g. "1. Dr. Hannibal Lecter"?
     students.each.with_index(1) do |student, index| # added index here
       ## Added condition for length of name < 12 characters
       puts "#{index}: #{student[:name]} (#{student[:cohort]} cohort)" if (student[:name][0] == "A" && student[:name].length < 12)
     end # end of .each
-=end
+
 
 # Rewrite the print method that prints all students using while or until control flow methods
     count = 0
@@ -57,6 +74,25 @@ def print(students)
 puts "#{count +1}: #{students[count][:name]} (#{students[count][:cohort]} cohort, Birthplace: #{students[count][:country_of_birth]}, Speaks: #{students[count][:language]})".center(100) if (students[count][:name][0] == "A"  && students[count][:name].length < 12)
       count += 1
     end
+
+# 8. Change the way the users are displayed: print them grouped by cohorts
+
+puts "Students is: #{students}" # an array of hashes
+
+  students.each do |h|      # this is an array of hashes
+     h.each do |k,v| # this is the hash
+      # Sorting from smallest to largest value
+      puts "k is: #{k} and v is: #{v[1]}"
+
+       #puts " Sorting by values in the array is: #{h.sort_by {|k, v| v} }"
+       #sorted = []
+       #sorted = h.sort_by {|k| k[v]}
+       #puts "sorted is #{sorted}"
+     end
+  end
+
+
+=end
 
 end # end of print function
 
