@@ -127,7 +127,11 @@ end # end of print function
 
 
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  #puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students" if names.count > 1
+  puts "Overall, we have #{names.count} great student" if names.count == 1
+
+
 end # end of print_footer function
 
 #Nothing happens UNTIL we call the methods:
